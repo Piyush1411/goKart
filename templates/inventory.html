@@ -1,0 +1,45 @@
+<!-- inventory.html -->
+<!doctype html>
+<html>
+<head>
+    <title>Inventory</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inventory</h1>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>SKU</th>
+            <th>Category</th>
+            <th>Sub-Category</th>
+            <th>Stock Quantity</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.product_name }}</td>
+            <td>{{ product.sku }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.sub_category }}</td>
+            <td>{{ product.stock_quantity }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
